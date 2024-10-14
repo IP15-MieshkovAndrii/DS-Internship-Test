@@ -26,8 +26,8 @@ The main components of this project are:
 First, clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/your-repo-name/ner-mountains.git
-cd ner-mountains
+git clone https://github.com/IP15-MieshkovAndrii/DS-Internship-Test
+cd Task 1
 ```
 
 ### 2. Install Dependencies
@@ -46,13 +46,11 @@ This will install the following packages:
 
 ### 3. Download or Prepare the Dataset
 
-The dataset is stored in the `dataset/` folder as `mountains_dataset.csv`. It contains sentences where mountain names are labeled using the IOB (Inside-Outside-Beginning) tagging scheme. You can view the dataset creation process in `data_creation.ipynb`.
-
-If you want to create your dataset, run the notebook `data_creation.ipynb` to generate the labeled dataset.
+The dataset is stored in the `data/` folder as `labeled_mountain_dataset.csv`. It contains sentences where mountain names are labeled using the IOB (Inside-Outside-Beginning) tagging scheme. You can view the dataset creation process in `data_creation.ipynb`.
 
 ### 4. Download Pre-trained Model
 
-The BERT model pre-trained for NER has been fine-tuned on the custom mountain dataset. The weights for this model are saved in the `fine_tuned_ner_model/` directory. If you'd like to fine-tune the model yourself, refer to the next section on how to train the model.
+The BERT model pre-trained for NER has been fine-tuned on the custom mountain dataset. The weights for this model are saved in the `models/` directory. If you'd like to fine-tune the model yourself, refer to the next section on how to train the model.
 
 ## Data Preparation
 
@@ -67,11 +65,11 @@ mountain O
 ...
 ```
 
-The data is loaded and processed in `train_model.py` for fine-tuning the model. Tokenization is performed using BERT's tokenizer, and the tags are aligned to match tokenized words.
+The data is loaded and processed in `train_ner_model.py` for fine-tuning the model. Tokenization is performed using BERT's tokenizer, and the tags are aligned to match tokenized words.
 
 ## Training the Model
 
-To fine-tune the BERT model on the dataset, run the `train_model.py` script:
+To fine-tune the BERT model on the dataset, run the `train_ner_model.py` script:
 
 ```bash
 python train_model.py
@@ -80,9 +78,9 @@ python train_model.py
 The script:
 1. Loads and tokenizes the dataset.
 2. Fine-tunes the BERT model for token classification using the mountain dataset.
-3. Saves the fine-tuned model to the `fine_tuned_ner_model/` directory.
+3. Saves the fine-tuned model to the `models/fine_tuned_ner_model/` directory.
 
-You can modify the hyperparameters (e.g., batch size, number of epochs) in `train_model.py` as needed.
+You can modify the hyperparameters (e.g., batch size, number of epochs) in `train_ner_model.py` as needed.
 
 ## Inference (Using the Model)
 
