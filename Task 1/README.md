@@ -91,7 +91,7 @@ python inference.py
 ```
 
 The script:
-1. Loads the fine-tuned model from the `fine_tuned_ner_model/` directory.
+1. Loads the fine-tuned model from the `fine_tuned_ner_model/` directory. Model weights link: "https://drive.google.com/drive/folders/1_tbNXLDS6FB4FYGvPRb7znBdpJRaM65K?usp=drive_link"
 2. Runs inference on the input text and prints the identified mountain names.
 
 You can modify the input sentences directly in the script or provide text as an argument.
